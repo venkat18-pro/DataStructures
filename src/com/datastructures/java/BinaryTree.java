@@ -45,6 +45,18 @@ public class BinaryTree {
 		
 	}
 	
+	void printPreorder(Node node) {
+		if(node == null) return;
+		
+		System.out.print(node.key+" ");
+		
+		printPreorder(node.left);
+		
+		printPreorder(node.right);
+		
+	}
+	
+	void printPreorder() { printPreorder(root); }
 	void printInorder() { printInorder(root); }
 	void printPostorder(){ printPostorder(root); }
 	public static void main(String[] args) {
@@ -71,6 +83,9 @@ public class BinaryTree {
 		System.out.println();
 		System.out.println("Inorder: ");
 		tree.printInorder();
+		System.out.println();
+		System.out.println("Pre Order: ");
+		tree.printPreorder();
 	}
 
 }
