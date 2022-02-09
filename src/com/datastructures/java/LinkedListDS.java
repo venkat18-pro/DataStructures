@@ -12,6 +12,14 @@ class NodeLink{
 public class LinkedListDS{
 	NodeLink head;	
 		
+	void printList() {
+		NodeLink n = head;
+		while(n != null) {
+			System.out.println(n.data);
+			n = n.next;
+		}
+	}
+	
 	public static void main(String[] args) {
 
 		LinkedListDS list = new LinkedListDS();
@@ -22,11 +30,7 @@ public class LinkedListDS{
 		list.head.next = second;
 		second.next = thrid;
 		
-		System.out.println("Head value: "+list.head.data);
-		System.out.println("Second value: "+list.head.next.data);
-		System.out.println("Thrid value: "+second.next.data);
-		
-		
+		list.printList();
 		
 	}
 
