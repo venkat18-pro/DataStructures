@@ -20,6 +20,12 @@ public class LinkedListDS{
 		}
 	}
 	
+	public void push(int data) {
+		NodeLink newNode = new NodeLink(data);
+		newNode.next = head;
+		head = newNode;
+	}
+	
 	public static void main(String[] args) {
 
 		LinkedListDS list = new LinkedListDS();
@@ -30,6 +36,9 @@ public class LinkedListDS{
 		list.head.next = second;
 		second.next = thrid;
 		
+		list.printList();
+		System.out.println("Add the new Node: ");
+		list.push(40);
 		list.printList();
 		
 	}
