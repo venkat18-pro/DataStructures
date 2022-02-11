@@ -39,6 +39,22 @@ public class LinkedListDS{
 		
 	}
 	
+	public void append(int data) {
+		NodeLink newNode = new NodeLink(data);
+		
+		if(head == null) {
+			head = new NodeLink(data);
+			return;
+		}
+		
+		NodeLink lists = head;
+		while(lists.next != null) lists = lists.next;
+		
+		lists.next = newNode;
+		return;
+		
+	}
+	
 	public static void main(String[] args) {
 
 		LinkedListDS list = new LinkedListDS();
@@ -56,7 +72,9 @@ public class LinkedListDS{
 		System.out.println("After insert value: ");
 		list.insertAfter(second, 50);
 		list.printList();
-		
+		System.out.println("insert the value in last Node: ");
+		list.append(60);
+		list.printList();
 		
 	}
 
