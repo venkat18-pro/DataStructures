@@ -55,6 +55,27 @@ public class LinkedListDS{
 		
 	}
 	
+	public void deleteNode(int key)
+	   {
+      
+        NodeLink temp = head, prev = null;
+ 
+
+        if (temp != null && temp.data == key) {
+            head = temp.next;
+            return;
+        }
+
+        while (temp != null && temp.data != key) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        if (temp == null)
+            return;
+        prev.next = temp.next;
+    }
+	
 	public static void main(String[] args) {
 
 		LinkedListDS list = new LinkedListDS();
@@ -74,6 +95,9 @@ public class LinkedListDS{
 		list.printList();
 		System.out.println("insert the value in last Node: ");
 		list.append(60);
+		list.printList();
+		System.out.println("Delete Node list value: ");
+		list.deleteNode(30);
 		list.printList();
 		
 	}
